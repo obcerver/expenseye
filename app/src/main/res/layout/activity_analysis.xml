@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark_beige"
+    tools:context=".AnalysisActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_shape_invert">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="20dp"
+            android:text="Analysis"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_margin="20dp"
+            android:columnCount="3"
+            android:rowCount="1">
+
+            <Button
+                android:id="@+id/btnAnalysisDaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:backgroundTint="@color/dark_turquoise"
+                android:text="Daily" />
+
+            <Button
+                android:id="@+id/btnAnalysisMonthly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/dark_turquoise"
+                android:text="Monthly" />
+
+            <Button
+                android:id="@+id/btnAnalysisAllTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:backgroundTint="@color/dark_turquoise"
+                android:text="All Time" />
+        </GridLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutChangeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutNav"
+        android:layout_below="@+id/layoutCategory"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:id="@+id/layoutAnalysisDaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvCurrentDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Today Date"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvDailyTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Total Expenses: RM 0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/rounded_shape_analysis">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChartDaily"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/percentageCategoryDailyList"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:padding="20dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAnalysisMonthly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvCurrentMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Month"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tvMonthlyTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Total Expenses: RM 0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_shape_analysis"
+                        android:layout_marginBottom="20dp">
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/lineChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_marginBottom="20dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:background="@drawable/rounded_shape_analysis">
+
+                        <com.github.mikephil.charting.charts.PieChart
+                            android:id="@+id/pieChartMonthly"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/percentageCategoryMonthlyList"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:padding="20dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutAnalysisAllTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvAllTimeTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:text="Total Expenses: RM 0"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:background="@drawable/rounded_shape_analysis">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChartAllTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/percentageCategoryAllTimeList"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:padding="20dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dark_beige"
+        android:orientation="horizontal"
+        android:layout_above="@id/layoutNav"/>
+
+    <LinearLayout
+        android:id="@+id/layoutNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/beige"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/baseline_discount"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Category"
+            android:textSize="13dp"
+            android:backgroundTint="@color/beige"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btnAddExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/baseline_attach_money"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Add Expense"
+            android:textSize="13dp"
+            android:backgroundTint="@color/beige"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/btnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/baseline_home"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Home"
+            android:textSize="13dp"
+            android:backgroundTint="@color/beige"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+</RelativeLayout>

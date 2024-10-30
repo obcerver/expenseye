@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="color0">#333333</color>  <!-- Dark Grey -->
+    <color name="color1">#FF5733</color>   <!-- Red Orange -->
+    <color name="color2">#FF8D33</color>   <!-- Orange -->
+    <color name="color3">#FFC133</color>   <!-- Yellow Orange -->
+    <color name="color4">#FFF033</color>   <!-- Yellow -->
+    <color name="color5">#C0FF33</color>   <!-- Light Green -->
+    <color name="color6">#33FF57</color>   <!-- Green -->
+    <color name="color7">#33FFBD</color>   <!-- Aqua -->
+    <color name="color8">#33FFF6</color>   <!-- Light Blue -->
+    <color name="color9">#33C4FF</color>   <!-- Sky Blue -->
+    <color name="color10">#3390FF</color>  <!-- Blue -->
+    <color name="color11">#334AFF</color>  <!-- Deep Blue -->
+    <color name="color12">#8C33FF</color>  <!-- Violet -->
+    <color name="color13">#D633FF</color>  <!-- Purple -->
+    <color name="color14">#FF33E3</color>  <!-- Magenta -->
+    <color name="color15">#FF338F</color>  <!-- Deep Pink -->
+    <color name="color16">#FF3357</color>  <!-- Pink Red -->
+    <color name="color17">#FF3333</color>  <!-- Red -->
+    <color name="color18">#FF6633</color>  <!-- Orange Red -->
+    <color name="color19">#FF9933</color>  <!-- Orange Yellow -->
+    <color name="color20">#FFCC33</color>  <!-- Yellow Gold -->
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="turquoise">#00C6AD</color>
+    <color name="dark_turquoise">#008877</color>
+    <color name="beige">#F4E8D1</color>
+    <color name="dark_beige">#FFE9BE</color>
+    <color name="choc">#D1B987</color>
+    <color name="blue">#0067EA</color>
+    <color name="dark_blue">#FF004397</color>
+    <color name="light_orange">#FDBE11</color>
+</resources>
